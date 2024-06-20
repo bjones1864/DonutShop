@@ -1,0 +1,21 @@
+<h1>Shopping Cart</h1>
+
+<table>
+    <tr>
+        <th>Donut</th>
+        <th>Calories</th>
+        <th>Price</th>
+    </tr>
+    @for(d of getCart(); track $index){
+        <tr>
+            <td>{{ d.name }}</td>
+            <td>{{ d.calories }}</td>
+            <td>Price: $1</td>
+            <td>
+                <button type="button" (click)="removeFromCart(d)">X</button>
+            </td>
+        </tr>
+    }
+</table>
+
+<p>Total: ${{ getCartLength() }}</p>
