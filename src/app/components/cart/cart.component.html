@@ -5,12 +5,14 @@
         <th>Donut</th>
         <th>Calories</th>
         <th>Price</th>
+        <th>Quantity</th>
     </tr>
-    @for(d of getCart(); track $index){
+    @for(d of getCartDistict(); track $index){
         <tr>
             <td>{{ d.name }}</td>
             <td>{{ d.calories }}</td>
             <td>Price: $1</td>
+            <td>x{{ getItemQuantity(d) }}</td>
             <td>
                 <button type="button" (click)="removeFromCart(d)">X</button>
             </td>
@@ -18,4 +20,5 @@
     }
 </table>
 
-<p>Total: ${{ getCartLength() }}</p>
+<p>Total calories: {{ getTotalCalories() }}</p>
+<p>Total: ${{ getCart().length }}</p>

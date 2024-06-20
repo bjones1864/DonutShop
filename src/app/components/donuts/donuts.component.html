@@ -2,6 +2,6 @@
 
 <ul>
     @for(d of allDonuts.results; track $index){
-        <li [routerLink]="['/', d.id]">{{ d.name }}</li>
+        <li [routerLink]="['/donuts/', d.id]">{{ d.name }}</li>
     }
 </ul>

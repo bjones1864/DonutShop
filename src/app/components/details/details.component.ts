@@ -19,8 +19,8 @@ export class DetailsComponent {
   displayDonut: DonutDetails = {} as DonutDetails;
 
   getID(): void{
-    this.activatedRoute.paramMap.subscribe((paramMap) => {
-      this.id = Number(paramMap.get("id"));
+    this.activatedRoute.paramMap.subscribe((param) => {
+      this.id = Number(param.get("id"));
     })
   }
 

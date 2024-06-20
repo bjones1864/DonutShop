@@ -38,7 +38,7 @@ export class DonutsService {
     this.cart = [];
   }
 
-  getCartLength():number{
-    return this.cart.length;
+  getTotalCalories():number{
+    return this.cart.reduce((current, next) => current += next.calories, 0);
   }
 }

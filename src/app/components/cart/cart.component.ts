@@ -24,8 +24,17 @@ export class CartComponent {
     this._donutsService.resetCart();
   }
 
-  getCartLength():number{
-    return this._donutsService.getCartLength();
+  getTotalCalories():number{
+    return this._donutsService.getTotalCalories();
+  }
+
+  getCartDistict(): DonutDetails[]{
+    let map = new Map(this._donutsService.getCart().map(pos => [pos.id, pos]));
+    return [...map.values()];
+  }
+
+  getItemQuantity(d: DonutDetails): number {
+    return this._donutsService.getCart().reduce((total:number, current:DonutDetails) => current == d ? total + 1 : total, 0);
   }
 
 

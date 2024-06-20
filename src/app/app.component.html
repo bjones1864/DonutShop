@@ -1,4 +1,5 @@
 <a routerLink="/">Home</a>
-<a routerLink="/cart">Cart@if(getCartLength() != 0){({{ getCartLength() }})}</a>
+<br />
+<a routerLink="/cart">Cart@if(getCart().length != 0){({{ getCart().length }})}</a>
 
 <router-outlet></router-outlet>
